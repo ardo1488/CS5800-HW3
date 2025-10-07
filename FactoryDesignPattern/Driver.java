@@ -9,11 +9,12 @@ public class Driver {
 
         mealSingleton.createMeal();
 
-          for(int i = 0; i < 6; i++) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Please enter your name: ");
-            String name = scanner.nextLine();
-            System.out.println("Select a diet plan (1- No Restrictions, 2- Paleo, 3- Vegan, 4- Nut Allergy): ");
+        Scanner scanner = new Scanner(System.in);
+
+        for(int i = 0; i < 6; i++) {
+            System.out.print("Please enter your name: ");
+            String name = scanner.next();
+            System.out.print("Select a diet plan (1- No Restrictions, 2- Paleo, 3- Vegan, 4- Nut Allergy): ");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1 -> mealSingleton.setDietPlan(new NoRestrictionsDietPlan());
@@ -26,11 +27,11 @@ public class Driver {
                 }
             }
             mealSingleton.createMeal();
-            System.out.println("Customer " + (i + 1) + ":  " + name + "\nMeal Plan:");
+            System.out.println("\nCustomer " + (i + 1) + ":  " + name + "\n\nMeal:");
             System.out.println("Carbs: " + mealSingleton.getCarbs());
             System.out.println("Fats: " + mealSingleton.getFats());
             System.out.println("Protein: " + mealSingleton.getProtein() + "\n");
-            scanner.close();
         }
+        scanner.close();
     }
 }
