@@ -6,7 +6,7 @@ public class MealSingleton {
     private Protein protein;
 
     private MealSingleton() {
-        // Private constructor to prevent instantiation
+        
     }
 
     public static MealSingleton getInstance() {
